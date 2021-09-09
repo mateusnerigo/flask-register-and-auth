@@ -1,7 +1,11 @@
-# Modules to install
+# Simple Flask Project
+
+## Modules to install
+
 - flask
 - flask-login
 - flask-sqlalchemy
 
-# Tutorial Link
+## Tutorial Link
+
 - Python Website Full Tutorial - Flask, Authentication, Databases & More[https://www.youtube.com/watch?v=dam0GPOAvVI]
