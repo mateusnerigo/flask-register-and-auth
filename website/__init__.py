@@ -2,6 +2,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_login import LoginManager
 # imports
 
 # database stuff
@@ -32,6 +33,15 @@ def create_app():
   )
 
   create_database(app)
+
+  # telling flask wich user we are looking for
+  login_manager = LoginManager()
+  login_manager.login_view = 'auth.login'
+  login_manager.init_app(app)
+
+  @login_manager.user_loader
+  def load_user(id) :
+    return Users.query.get(int(id))
 
   return app
 
