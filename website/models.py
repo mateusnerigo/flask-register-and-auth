@@ -1,6 +1,8 @@
+# imports
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
+# imports
 
 # Creating Notes table
 class Notes(db.Model) :
