@@ -25,21 +25,30 @@ def sign_up():
 		password = req.form.get('password')
 		confirmPassword = req.form.get('confirmPassword')
 
-		if len(firstName) < 3:
+		if len(email) == 0 :
+			flash(
+				'Email is required',
+				category='error'
+			)
+
+		elif len(firstName) < 3:
 			flash(
 				'First Name must be greater than 2 characters.',
 				category='error'
     	)
+
 		elif len(password) < 8:
 			flash(
 				'Password must be at least 8 characters.',
 				category='error'
 			)
+
 		elif password != confirmPassword:
 			flash(
      		'Passwords don \'t match!',
 				category='error'
     	)
+
 		else:
 			flash(
 				'Account created',
